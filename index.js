@@ -17,8 +17,8 @@ const fibonacciSequenceCalculator = (num) => {
 
   return {
     getSequence: () => cached,
-    getFinalNumber: () => calc(num)
-  }
+    getFinalNumber: () => calc(num),
+  };
 };
 
 const load = () => {
@@ -28,16 +28,21 @@ const load = () => {
   const calcBtn = document.querySelector('#calcBtn');
 
   calcBtn.addEventListener('click', () => {
-    if (numField.value && numField.value >= 1 && numField.value <= 100) {
+    if (
+      numField.value &&
+      numField.value >= 1 &&
+      numField.value <= 100 &&
+      Math.trunc(numField.value) === +numField.value
+    ) {
       const numToElab = Math.floor(numField.value);
       const fibonacciResult = fibonacciSequenceCalculator(numToElab);
       result.innerText = fibonacciResult.getFinalNumber();
-      sequence.innerText = fibonacciResult.getSequence().join(", ");
+      sequence.innerText = fibonacciResult.getSequence().join(', ');
     } else {
-      result.innerText = '0';
-      sequence.innerText = '0';
+      //result.innerText = '0';
+      //sequence.innerText = '0';
     }
   });
-}
+};
 
 load();
