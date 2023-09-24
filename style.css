@@ -1,0 +1,89 @@
+:root {
+  --primary-color: rgb(92, 176, 228);
+  --primary-color-lighter: rgb(169, 202, 224);
+
+  --button-bg-color: rgb(93, 118, 230);
+  --button-bg-color-hover: rgb(12, 9, 212);
+
+  --button-disabled-bg-color: rgb(210, 210, 214);
+  --button-disabled-color: rgb(150, 148, 148);
+}
+
+* {
+  font-family: Poppins;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 50px;
+}
+
+.form-control {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 150px;
+  font-size: 26px;
+  white-space: nowrap;
+}
+
+label {
+  font-weight: 600;
+}
+
+input {
+  border: 3px solid var(--primary-color-lighter);
+  border-radius: 6px;
+  padding: 4px 8px;
+  text-align: right;
+  font-size: 18px;
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input:focus-visible {
+  outline: none;
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+button {
+  font-family: Poppins;
+  font-size: 16px;
+  margin-top: 30px;
+  background-color: var(--button-bg-color);
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  padding: 8px 12px;
+  cursor: pointer;
+  letter-spacing: 1.5px;
+}
+
+button:hover {
+  background-color: var(--button-bg-color-hover);
+}
+
+#container:has(input:invalid) button {
+  cursor: not-allowed;
+  background-color: var(--button-disabled-bg-color);
+  color: var(--button-disabled-color);
+}
+
+.output-wrapper {
+  gap: 20px;
+  text-align: left;
+  font-size: 20px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  align-self: flex-start;
+  padding: 0 100px;
+  display: grid;
+  grid-template-columns: 150px 1fr;
+}
