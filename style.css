@@ -98,3 +98,9 @@ button:hover {
     padding: 0 100px;
   }
 }
+
+@media (min-width: 1024px) {
+  .output-wrapper {
+    padding: 0 150px;
+  }
+}
